@@ -16,7 +16,7 @@ class opController extends Controller
                     t_visit_primary_symptom.visit_primary_symptom_current_illness AS ccpi,
                     b_employee.employee_firstname||' '||b_employee.employee_lastname AS dr,b_employee.employee_number AS numbers,
                     t_visit.visit_hn,t_visit.visit_vn,t_visit.visit_dx,t_visit.visit_begin_visit_time AS visit_date,
-                    t_visit.t_visit_id
+                    t_visit.visit_financial_discharge_time AS visit_dc,t_visit.t_visit_id
                 FROM 
                 t_visit INNER JOIN t_patient  ON t_visit.t_patient_id = t_patient.t_patient_id 
                 LEFT JOIN f_patient_prefix ON t_patient.f_patient_prefix_id = f_patient_prefix.f_patient_prefix_id
@@ -88,6 +88,17 @@ class opController extends Controller
                 ->where('t_visit_id',$id)
                 ->where('f_item_group_id',1)
                 ->get();
-        return view('show',['result'=>$result,'drug'=>$drug]);
+
+        $lab = DB::table('t_order')->select('order_common_name')
+                ->where('t_visit_id',$id)
+                ->where('f_item_group_id',2)
+                ->get();
+
+        $xray = DB::table('t_order')->select('order_common_name')
+                ->where('t_visit_id',$id)
+                ->where('f_item_group_id',3)
+                ->get();
+
+        return view('show',['result'=>$result,'drug'=>$drug,'lab'=>$lab,'xray'=>$xray]);
     }
 }

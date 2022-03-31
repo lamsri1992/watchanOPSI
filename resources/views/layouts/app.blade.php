@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>รพ.วัดจันทร์ฯ : ระบบใบรับรองการจ่ายเงินเดือน</title>
+    <title>WATCHAN-OPSI : REPORT</title>
     <link href="{{ asset('bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap/template/starter-template/starter-template.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
