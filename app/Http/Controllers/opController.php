@@ -38,7 +38,7 @@ class opController extends Controller
                     ,t_visit_primary_symptom.visit_primary_symptom_current_illness,b_employee.employee_number
                     ,b_employee.employee_firstname,b_employee.employee_lastname,t_visit.visit_dx
                     ,t_visit.visit_begin_visit_time,t_visit.t_visit_id
-                ORDER BY t_visit.visit_begin_visit_time ASC");
+                ORDER BY t_visit.visit_begin_visit_time DESC");
         return view('list',['result'=>$result]);
     }
 
