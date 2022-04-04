@@ -2,7 +2,7 @@
     <a class="navbar-brand" href="#">
         <img src="https://www.erp.wc-hospital.go.th/argon/img/brand/logo.png" width="45" height="30" 
         class="d-inline-block align-top" alt="รพ.วัดจันทร์ฯ">
-        WatchanOPSI : 
+        Watchan-C19 Report :
         <small>
             ระบบดึงรายงานข้อมูลผู้ป่วย Covid-19
         </small>
