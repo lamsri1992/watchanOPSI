@@ -4,7 +4,7 @@
         class="d-inline-block align-top" alt="รพ.วัดจันทร์ฯ">
         WatchanOPSI : 
         <small>
-            ระบบดึงรายงานข้อมูลผู้ป่วย Covid-19 แบบ OP with Self Isolation
+            ระบบดึงรายงานข้อมูลผู้ป่วย Covid-19
         </small>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"

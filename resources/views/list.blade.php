@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <h5>
         <i class="far fa-hospital"></i>
-        รายงานข้อมูลผู้ป่วย Covid-19 ที่รับการรักษาแบบ OPSI : Self Isolation
+        รายงานข้อมูลผู้ป่วย Covid-19
     </h5>
     <table id="tableBasic" class="table table-hover table-borderless table-bordered">
         <thead class="">

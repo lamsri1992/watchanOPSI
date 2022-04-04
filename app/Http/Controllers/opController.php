@@ -84,21 +84,26 @@ class opController extends Controller
                     t_visit_vital_sign.visit_vital_sign_heart_rate,t_visit_vital_sign.visit_vital_sign_respiratory_rate
                 ORDER BY t_visit.visit_begin_visit_time ASC");
 
-        $drug = DB::table('t_order')->select('order_common_name')
+        $drug = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
                 ->where('f_item_group_id',1)
                 ->get();
 
-        $lab = DB::table('t_order')->select('order_common_name')
+        $lab = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
                 ->where('f_item_group_id',2)
                 ->get();
 
-        $xray = DB::table('t_order')->select('order_common_name')
+        $xray = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
                 ->where('f_item_group_id',3)
                 ->get();
 
-        return view('show',['result'=>$result,'drug'=>$drug,'lab'=>$lab,'xray'=>$xray]);
+        $room = DB::table('t_order')->select('order_common_name','order_qty','order_price')
+                ->where('t_visit_id',$id)
+                ->where('f_item_group_id',5)
+                ->get();
+
+        return view('show',['result'=>$result,'drug'=>$drug,'lab'=>$lab,'xray'=>$xray,'room'=>$room]);
     }
 }
