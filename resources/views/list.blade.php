@@ -27,7 +27,7 @@
                 <td class="text-center">{{ $res->age }}</td>
                 <td>{{ $res->visit_dx }}</td>
                 <td class="text-center">{{ $res->visit_date }}</td>
-                <td>
+                <td class="text-center">
                     <a href="{{ route('show',$res->t_visit_id) }}" class="btn btn-success btn-sm">
                         <i class="fas fa-clipboard"></i>
                     </a>

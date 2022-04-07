@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.dataTables.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('vendor/datepicker/jquery.datetimepicker.css') }}">
 </head>
 
 <style>
@@ -45,6 +46,7 @@
 <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript" charset="utf8" src="{{ asset('vendor/datepicker/jquery.datetimepicker.full.js') }}"></script>
 <script>
     // DATATABLES
  $(document).ready(function () {
@@ -66,6 +68,62 @@
                 sLengthMenu: '<small>แสดง _MENU_ รายการ</small>',
                 sInfoEmpty: '<small>ไม่มีข้อมูล</small>'
             },
+        });
+    });
+
+    $(document).ready(function () {
+        $('#tableExport').dataTable({
+            lengthMenu: [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            dom: '<"top"Blf>rt<"bottom"ip><"clear">',
+            buttons: {
+                buttons: [
+                    {
+                        extend: 'print',
+                        text: '<i class="fa fa-print"></i> พิมพ์',
+                        className: 'btn btn-info',
+                        footer: true
+                    },
+                    {
+                        extend: 'excel',
+                        text: '<i class="fa fa-file-excel"></i> Excel',
+                        className: 'btn btn-success',
+                        footer: true
+                    }
+                ],
+                dom: {
+                    button: {
+                        className: 'btn-sm'
+                    }
+                }
+            },
+            // scrollX: true,
+            ordering: false,
+            bLengthChange: false,
+            oLanguage: {
+                oPaginate: {
+                    sFirst: '<small>หน้าแรก</small>',
+                    sLast: '<small>หน้าสุดท้าย</small>',
+                    sNext: '<small>ถัดไป</small>',
+                    sPrevious: '<small>กลับ</small>'
+                },
+                sSearch: '<small><i class="fa fa-search"></i> ค้นหา</small>',
+                sInfo: '<small>ทั้งหมด _TOTAL_ รายการ</small>',
+                sLengthMenu: '<small>แสดง _MENU_ รายการ</small>',
+                sInfoEmpty: '<small>ไม่มีข้อมูล</small>'
+            },
+        });
+    });
+
+    // DATATIME_PICKER 
+    $(function() {
+        $.datetimepicker.setLocale('th');
+        $(".basicDate").datetimepicker({
+            format: 'Y-m-d',
+            lang: 'th',
+            timepicker: false,
         });
     });
 </script>

@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/','opController@index');
+Route::get('/search','opController@search')->name('search');
 Route::get('/{id}','opController@show')->name('show');
