@@ -54,12 +54,12 @@
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show" id="nav-form" role="tabpanel" aria-labelledby="nav-form-tab">
+        <div class="tab-pane fade show active" id="nav-form" role="tabpanel" aria-labelledby="nav-form-tab">
             <div id="printThis">
                @include('form')
             </div>
         </div>
-        <div class="tab-pane fade show active" id="nav-chi" role="tabpanel" aria-labelledby="nav-chi-tab">
+        <div class="tab-pane fade" id="nav-chi" role="tabpanel" aria-labelledby="nav-chi-tab">
             <div id="printCHI">
                @include('chi')
             </div>
