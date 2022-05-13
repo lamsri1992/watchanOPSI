@@ -1,7 +1,7 @@
 <div class="card" style="margin-bottom: 0.5rem;">
     <div class="card-body">
         <div class="text-center" style="margin-bottom: 0.5rem;">
-            <h5 class="font-weight-bold">ใบสรุปค่าใช้จ่ายผู้ป่วย Covid-19 แบบ OP With Self Isolation (เริ่ม 1 มีนาคม 2565)</h5>
+            <h5 class="font-weight-bold">ใบสรุปค่าใช้จ่ายผู้ป่วย Covid-19</h5>
             <span class="font-weight-bold">โรงพยาบาลวัดจันทร์เฉลิมพระเกียรติ ๘๐ พรรษา</span>
         </div>
         @foreach($result as $res)
