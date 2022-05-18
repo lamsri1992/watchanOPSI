@@ -69,8 +69,7 @@ class opController extends Controller
                 LEFT JOIN f_sex ON t_patient.f_sex_id = f_sex.f_sex_id
                 LEFT JOIN b_employee ON b_employee.b_employee_id = t_diag_icd10.diag_icd10_staff_doctor
                 LEFT JOIN t_visit_vital_sign ON t_visit_vital_sign.t_visit_id = t_visit.t_visit_id
-                WHERE visit_dx LIKE '%(Z29.0)%' AND visit_dx LIKE '%(U07.1)%' OR visit_dx LIKE '%(U07.2)%'
-                AND t_visit.t_visit_id = '$id'
+                WHERE t_visit.t_visit_id = '$id'
                 GROUP BY 
                     t_visit.t_visit_id,f_patient_prefix.patient_prefix_description,t_patient.patient_firstname
                     ,t_patient.patient_lastname,t_patient.patient_pid,t_patient.patient_birthday
