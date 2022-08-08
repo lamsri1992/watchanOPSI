@@ -85,32 +85,38 @@ class opController extends Controller
 
         $drug = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
+                ->where('f_order_status_id','!=',3)
                 ->where('f_item_group_id',1)
                 ->get();
 
         $chi = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
+                ->where('f_order_status_id','!=',3)
                 ->where('f_item_group_id',1)
                 ->where('order_common_name','not like','%Favipiravir%')
                 ->get();
 
         $favi = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
+                ->where('f_order_status_id','!=',3)
                 ->where('order_common_name','like','%Favipiravir%')
                 ->get();
                 
         $lab = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
+                ->where('f_order_status_id','!=',3)
                 ->where('f_item_group_id',2)
                 ->get();
 
         $xray = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
+                ->where('f_order_status_id','!=',3)
                 ->where('f_item_group_id',3)
                 ->get();
 
         $room = DB::table('t_order')->select('order_common_name','order_qty','order_price')
                 ->where('t_visit_id',$id)
+                ->where('f_order_status_id','!=',3)
                 ->where('f_item_group_id',5)
                 ->get();
 
